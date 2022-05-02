@@ -1,3 +1,4 @@
+// Because this controller class is named PizzaController, this controller handles requests to https://localhost:{PORT}/pizza
 using ContosoPizza.Models;
 using ContosoPizza.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,8 @@ public class PizzaController : ControllerBase {
     }
 
     // GET all action
+    [HttpGet]
+    public ActionResult<List<Pizza>> GetALl() => PizzaService.GetAll();
 
     // GET by Id action
 
